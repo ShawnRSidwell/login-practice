@@ -1,7 +1,8 @@
 package com.practice.loginpractice.service;
 
 
-import com.practice.loginpractice.model.User;
+import com.practice.loginpractice.entity.User;
+import com.practice.loginpractice.model.UserModel;
 import com.practice.loginpractice.repository.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -20,7 +21,7 @@ public class UserService {
         this.repository = repository;
     }
 
-    public User createUser(User user) {
+    public User createUser(UserModel user) {
         var userToSave = User.builder()
                 .name(user.getName())
                 .email(user.getEmail())

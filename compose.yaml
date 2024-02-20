@@ -1,9 +1,26 @@
+version: '3.8'
 services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+  spring-app:
+    build:
+      context: .
+      dockerfile: spring.dockerfile
+    container_name: spring-rest-api
+    restart: always
     ports:
-      - '5432'
+      - '8000:8000'
+    depends_on:
+      - postgres-db
+  postgres-db:
+    image: 'postgres:15-alpine'
+    restart: always
+    container_name: postgres-15
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Transp0s0ns3
+      - POSTGRES_DB=Login_Practice
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'db:/var/lib/postgresql/data'
+volumes:
+  db: null

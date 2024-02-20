@@ -1,8 +1,7 @@
 package com.practice.loginpractice.repository;
 
-import com.practice.loginpractice.model.User;
+import com.practice.loginpractice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 
 @Repository

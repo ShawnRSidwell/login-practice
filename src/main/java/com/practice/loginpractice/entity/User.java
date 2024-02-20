@@ -1,4 +1,4 @@
-package com.practice.loginpractice.model;
+package com.practice.loginpractice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
