@@ -1,17 +1,21 @@
 package com.practice.loginpractice.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
 @Entity
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class User {
 
     @Id
-    @Column(nullable = false)
+    @Column(name="user_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int user_id;
+    private int userId;
 
     @Column
     private String name;
